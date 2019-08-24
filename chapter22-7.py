@@ -16,8 +16,11 @@ class Solution:
             l3.append(l2.val)
             l2 = l2.next
         l3.sort()
-        res = ListNode(l3[0])
-        return res
+        # res = ListNode(l3[0])
+        for i in range(1, len(l3)):
+            node.next = ListNode(l3[i])
+            node = node.next
+        return node
 if __name__ == "__main__":
     s = Solution()
     print(s.mergeTwoLists([1, 2, 4], [1, 3, 4]))
